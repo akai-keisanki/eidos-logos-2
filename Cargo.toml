@@ -1,0 +1,10 @@
+[package]
+name = "elog"
+version = "0.1.0-beta.1"
+edition = "2024"
+
+[dependencies]
+regex = "1.11.1"
+
+[lib]
+name = "elog"
