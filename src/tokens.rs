@@ -28,6 +28,7 @@ pub enum Operator
     Mod,
     Or,
     And,
+    XOr,
     BOr,
     BAnd,
     BXOr,
