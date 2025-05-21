@@ -8,7 +8,6 @@ pub fn tokenize_str (mut string: &str) -> Vec::<Token>
 
     while string.len() != 0
     {
-        dbg!(string);
         for pat in patterns_la.iter()
         {
             if let Some(pat_match) = pat.0.find(string)
@@ -31,7 +30,7 @@ pub fn tokenize_str (mut string: &str) -> Vec::<Token>
                 else
                 { result = pat.1.clone() }
 
-                tokens.push(dbg!(result));
+                tokens.push(result);
 
                 string = &string[pat_match.end()..];
 
