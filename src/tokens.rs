@@ -1,56 +1,46 @@
+#[derive(Debug, Clone, PartialEq)]
 pub enum Keyword
 {
-    Let,
-    Def,
+    Let, Def,
     As,
-    Assert,
-    Input,
+    Assert, Input,
     Ref,
-    If,
-    Else,
+    If, Else,
     With
 }
 
+#[derive(Debug, Clone, PartialEq)]
 pub enum Operator
 {
     Asi,
-    DDot,
-    QDot,
-    RArr,
-    LArr,
-    DArr,
-    Add,
-    Sub,
-    Mul,
-    Div,
-    Exp,
-    Root,
+    Add, Sub, Mul, Div,
+    Exp, Root,
     Mod,
-    Or,
-    And,
-    XOr,
-    BOr,
-    BAnd,
-    BXOr,
-    Not,
-    In,
-    NIn,
-    Les,
-    Gre,
-    Equ,
-    LEq,
-    GEq,
-    NEq
+    Or, And, XOr, Not,
+    BOr, BAnd, BXOr, BNot,
+    In, NIn,
+    Les, Gre, Equ,
+    LEq, GEq, NEq
 }
 
+#[derive(Debug, Clone, PartialEq)]
+pub enum Symbol
+{
+    QDot,
+    RArr, LArr, DArr,
+    Com, SCol, Col, Per
+}
+
+#[derive(Debug, Clone, PartialEq)]
 pub enum Brace
 {
     Round(bool),
     Square(bool),
     Curly(bool),
-    Comment(bool)
+    Comment
 }
 
+#[derive(Debug, Clone, PartialEq)]
 pub enum Token
 {
     Keyword(Keyword),
@@ -59,8 +49,9 @@ pub enum Token
     Identifier(String),
     Numeric(f64),
     Operator(Operator),
+    Symbol(Symbol),
     Brace(Brace),
-    Whitespace,
-    Unknown(String)
+    WhiteSpace,
+    Unknown
 }
 
